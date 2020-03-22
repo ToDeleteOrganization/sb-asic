@@ -1,0 +1,21 @@
+
+div.header {
+    text-align: center;
+    background-color: aquamarine;
+    font-family: "Courier 10 Pitch";
+    font-size: 16px;
+    height: 15%;
+}
+
+div.footer {
+    text-align: center;
+    background-color: blueviolet;
+    font-family: "DejaVu Sans";
+    font-size: 16px;
+    height: 15%;
+}
+
+div.homeBody {
+    text-align: center;
+    height: 70%;
+}
