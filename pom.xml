@@ -24,7 +24,7 @@
         <repository>
             <id>in-project</id>
             <name>In Project Repo</name>
-            <url>file://${project.basedir}/libs</url>
+            <url>file://${project.basedir}/src/libs</url>
         </repository>
     </repositories>
     <dependencies>
