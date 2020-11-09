@@ -20,13 +20,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>in-project</id>
-            <name>In Project Repo</name>
-            <url>file://${project.basedir}/src/libs</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>in-project</id>-->
+            <!--<name>In Project Repo</name>-->
+            <!--<url>file://${project.basedir}/libs</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
     <dependencies>
         <!-- web app -->
         <dependency>
@@ -68,10 +68,17 @@
             <optional>true</optional>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>com.test.arduino</groupId>-->
+            <!--<artifactId>serial_ports</artifactId>-->
+            <!--<version>0.0.1</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.test.arduino</groupId>
             <artifactId>serial_ports</artifactId>
+            <scope>system</scope>
             <version>0.0.1</version>
+            <systemPath>${basedir}/libs/customArduino.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -145,6 +152,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>5.2.8.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
         </dependency>
 
         <dependency>
