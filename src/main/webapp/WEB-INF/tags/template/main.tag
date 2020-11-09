@@ -1,25 +1,26 @@
 <%@ tag body-content="scriptless" trimDirectiveWhitespaces="true"%>
 
-<%@ attribute name="pageTitle" required="true" rtexprvalue="true"%>
-<%@ attribute name="bodyCss" required="false" rtexprvalue="true"%>
+<%@ attribute command="pageTitle" required="true" rtexprvalue="true"%>
+<%@ attribute command="bodyCss" required="false" rtexprvalue="true"%>
 
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/template/"%>
 
 <template:template pageTitle="${pageTitle}" bodyCss="${bodyCss}">
 
-    <jsp:attribute name="header">
+    <jsp:attribute command="header">
         Header
     </jsp:attribute>
 
-    <jsp:attribute name="footer">
+    <jsp:attribute command="footer">
         Footer
     </jsp:attribute>
 
-    <jsp:attribute name="javascript">
+    <jsp:attribute command="javascript">
         <script type="text/javascript" src="/js/thejq.js"></script>
         <script type="text/javascript" src="/js/basicjs.js"></script>
+        <script type="text/javascript" src="/js/color.js"></script>
     </jsp:attribute>
-    <jsp:attribute name="stylesheet">
+    <jsp:attribute command="stylesheet">
         <link rel="stylesheet" type="text/css" href="/style/style.css" />
     </jsp:attribute>
 

@@ -1,12 +1,12 @@
 <%@ tag body-content="scriptless" trimDirectiveWhitespaces="true"%>
 
-<%@ attribute name="pageTitle" required="true" rtexprvalue="true"%>
-<%@ attribute name="bodyCss" required="false" rtexprvalue="true"%>
+<%@ attribute command="pageTitle" required="true" rtexprvalue="true"%>
+<%@ attribute command="bodyCss" required="false" rtexprvalue="true"%>
 
-<%@ attribute name="header" fragment="true" required="true" %>
-<%@ attribute name="footer" fragment="true" required="false" %>
-<%@ attribute name="javascript" fragment="true" required="false" %>
-<%@ attribute name="stylesheet" fragment="true" required="false" %>
+<%@ attribute command="header" fragment="true" required="true" %>
+<%@ attribute command="footer" fragment="true" required="false" %>
+<%@ attribute command="javascript" fragment="true" required="false" %>
+<%@ attribute command="stylesheet" fragment="true" required="false" %>
 
 <html>
     <head>
