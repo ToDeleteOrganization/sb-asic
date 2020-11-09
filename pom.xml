@@ -171,6 +171,27 @@
         </dependency>
     </dependencies>
 
+    <!--TODO: create multiple profiles for deploy-->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+                <server.port>8090</server.port>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+                <server.port>809</server.port>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
 
 <!--mvn install:install-file -Dfile=./rxtxcomm.jar -DgroupId=com.rxtxcomm -DartifactId=rxtxcomm -Dversion=0.0.1 -Dpackaging=jar-->
