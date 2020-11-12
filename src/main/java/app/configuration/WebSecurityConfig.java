@@ -23,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .passwordParameter("jassword").usernameParameter("jsername")
-                .loginPage("/josin").permitAll()
+                .loginPage("/login").permitAll()
                 .and()
                 .logout().permitAll();
     }

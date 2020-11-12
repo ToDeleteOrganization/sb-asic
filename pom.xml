@@ -7,7 +7,7 @@
     <artifactId>redis-test</artifactId>
     <groupId>com.baeldung</groupId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,29 +21,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>in-project</id>-->
-            <!--<name>In Project Repo</name>-->
-            <!--<url>file://${project.basedir}/libs</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
     <dependencies>
         <!-- web app -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-
-        <!-- Tomcat-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <!--<scope>provided</scope>-->
         </dependency>
 
         <dependency>
@@ -171,6 +153,26 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>app.MainBasicApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <!--TODO: create multiple profiles for deploy-->
     <profiles>
