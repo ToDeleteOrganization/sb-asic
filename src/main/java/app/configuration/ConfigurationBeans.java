@@ -18,18 +18,18 @@ public class ConfigurationBeans {
     private static final String PORT_NAME = "COM3";
 
     @Bean
-    @Profile("prod")
+//    @Profile("!dev")
     public BoardService createArduinoBoard() {
         final ArduinoBoard boardForPort = ArduinoBoardCreator.getBoardForPort(NO_PORT_NAME);
         return new DefaultArduinoService(boardForPort, new ArduinoManager());
     }
 
-    @Bean
-    @Profile("dev")
-    public BoardService createMockArduinoBoard() {
-        final ArduinoBoard boardForPort = ArduinoBoardCreator.getBoardForPort(NO_PORT_NAME);
-        return new DefaultArduinoService(boardForPort, new ArduinoManager());
-    }
+//    @Bean
+//    @Profile("dev")
+//    public BoardService createMockArduinoBoard() {
+//        final ArduinoBoard boardForPort = ArduinoBoardCreator.getBoardForPort(PORT_NAME);
+//        return new DefaultArduinoService(boardForPort, new ArduinoManager());
+//    }
 
     @Bean
     public ServletServerContainerFactoryBean createWebSocketContainer() {
