@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=prod -jar target/redis-test-0.0.1-SNAPSHOT.jar
+web: java -Dspring.profiles.active=prod -Dhttp.port=$PORT -jar target/redis-test-0.0.1-SNAPSHOT.jar
