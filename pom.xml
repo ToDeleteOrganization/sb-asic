@@ -19,6 +19,7 @@
         <spring.boot>2.2.5.RELEASE</spring.boot>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <start-class>app.MainBasicApp</start-class>
     </properties>
 
     <dependencies>
@@ -60,8 +61,8 @@
             <groupId>com.test.arduino</groupId>
             <artifactId>serial_ports</artifactId>
             <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/lib/customArduino.jar</systemPath>
             <version>0.0.1</version>
-            <systemPath>${basedir}/libs/customArduino.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -163,14 +164,22 @@
                 <!--<version>3.1.0</version>-->
                 <!--<configuration>-->
                     <!--<archive>-->
+                        <!--<addMavenDescriptor>false</addMavenDescriptor>-->
                         <!--<manifest>-->
-                            <!--<addClasspath>true</addClasspath>-->
-                            <!--<classpathPrefix>lib/</classpathPrefix>-->
-                            <!--<mainClass>app.MainBasicApp</mainClass>-->
+                            <!--&lt;!&ndash;<addClasspath>true</addClasspath>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
+                            <!--<mainClass>MainBasicApp</mainClass>-->
                         <!--</manifest>-->
                     <!--</archive>-->
                 <!--</configuration>-->
             <!--</plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

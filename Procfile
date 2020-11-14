@@ -1,1 +1,1 @@
-web: java -jar target/redis-test-0.0.1-SNAPSHOT.jar
+web: java -Dspring.profiles.active=dev -jar target/redis-test-0.0.1-SNAPSHOT.jar
