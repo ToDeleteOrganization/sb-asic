@@ -18,9 +18,9 @@ public class ConfigurationBeans {
     private static final String PORT_NAME = "COM3";
 
     @Bean
-    @Profile("!dev")
+    @Profile("prod")
     public BoardService createArduinoBoard() {
-        final ArduinoBoard boardForPort = ArduinoBoardCreator.getBoardForPort(PORT_NAME);
+        final ArduinoBoard boardForPort = ArduinoBoardCreator.getBoardForPort(NO_PORT_NAME);
         return new DefaultArduinoService(boardForPort, new ArduinoManager());
     }
 

@@ -157,22 +157,6 @@
 
     <build>
         <plugins>
-            <!--<plugin>-->
-                <!--&lt;!&ndash; Build an executable JAR &ndash;&gt;-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-jar-plugin</artifactId>-->
-                <!--<version>3.1.0</version>-->
-                <!--<configuration>-->
-                    <!--<archive>-->
-                        <!--<addMavenDescriptor>false</addMavenDescriptor>-->
-                        <!--<manifest>-->
-                            <!--&lt;!&ndash;<addClasspath>true</addClasspath>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
-                            <!--<mainClass>MainBasicApp</mainClass>-->
-                        <!--</manifest>-->
-                    <!--</archive>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -187,20 +171,12 @@
     <profiles>
         <profile>
             <id>dev</id>
-            <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
-                <server.port>8090</server.port>
-            </properties>
         </profile>
         <profile>
             <id>prod</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
-                <server.port>809</server.port>
-            </properties>
         </profile>
     </profiles>
 
