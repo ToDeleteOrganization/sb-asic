@@ -4,10 +4,7 @@ import arduino.manager.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BasicController {
@@ -15,9 +12,9 @@ public class BasicController {
     @Autowired
     private BoardService arduinoService;
 
-    @RequestMapping(value = "/home")
-    public String home(Model model) {
-        model.addAttribute("test", true);
+    @RequestMapping
+    public String home(@RequestParam(value = "test", defaultValue = "false") boolean param, Model model) {
+        model.addAttribute("test", param);
         return "home";
     }
 
