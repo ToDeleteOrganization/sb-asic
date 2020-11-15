@@ -10,6 +10,6 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.GET, value="/login")
     public String login(final Model model) {
-        return "login";
+        return "loginPage";
     }
 }
